@@ -17,17 +17,21 @@ def findGPA(_grade):
 def showSummary():
 
     gpaTotal = 0
+    gradeTotal = 0
     print("-------------------------")
 
     i = 0
     while (i < len(grades)):
         currentGPA = findGPA(grades[i])
         gpaTotal = gpaTotal + currentGPA
+        gradeTotal = gradeTotal + int(grades[i])
         print(classes[i] + ": " + str(currentGPA))
         i += 1
     
     cumalative = gpaTotal / len(grades)
-    print("Cumalative: " + str(cumalative))
+    cumalativeGrade = gradeTotal / len(grades)
+    print("Cumulative GPA: " + str(cumalative))
+    print("Cumulative Grade: " + str(cumalativeGrade))
 
 def collect():
     classTotal = int(input("Enter total number of classes: "))
